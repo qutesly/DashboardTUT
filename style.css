@@ -1,0 +1,702 @@
+/* ********ROOT VARIABLES******** */
+:root {
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* Dark Variables */
+
+.dark-theme-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-dark);
+}
+h2 {
+  font-size: 1.4rem;
+  color: var(--color-dark);
+}
+h3 {
+  font-size: 0.87rem;
+  color: var(--color-dark);
+}
+h4 {
+  font-size: 0.8rem;
+  color: var(--color-dark);
+}
+h5 {
+  font-size: 0.77rem;
+  color: var(--color-dark);
+}
+
+body {
+
+  width: 100%;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: var(--color-background);
+  overflow-x: hidden;
+}
+
+.section-p1 {
+  padding: 20px 30px;
+}
+
+#dasboard-container {
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* ===ASIDE==== */
+
+#dasboard-container .aside {
+
+  width: 15%;
+  height: 100vh;
+}
+
+#dasboard-container .aside-link-container {
+
+  width: 100%;
+  height: 89vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#dasboard-container .aside h2 {
+  font-size: 1.2rem;
+}
+
+#dasboard-container .aside .logo {
+
+  margin-bottom: 3rem;
+  /* width: 13rem; */
+}
+
+#dasboard-container .close-btn {
+    display: none;
+}
+
+#dasboard-container .aside .logo span {
+  color: red;
+}
+
+#dasboard-container a {
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#dasboard-container a:last-child {
+  position: absolute;
+  bottom: 2rem;
+}
+
+#dasboard-container .aside a i {
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 20px;
+  margin: 0 15px;
+  color: #929090;
+}
+
+#dasboard-container a p {
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #929090;
+  display: block;
+}
+
+#dasboard-container a.active p,
+#dasboard-container a:hover p {
+  color: var(--color-primary);
+}
+
+#dasboard-container a.active i,
+#dasboard-container a:hover i {
+  color: var(--color-primary);
+}
+
+#dasboard-container a.active,
+#dasboard-container a:hover {
+  background-color: var(--color-light);
+}
+
+#dasboard-container a.active:before,
+#dasboard-container a:hover::before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-primary);
+}
+
+/* ====MAIN==== */
+#main {
+
+  width: 63%;
+  margin-top: 1rem;
+}
+
+#main .h1 {
+
+  padding: 0 0 1rem 0;
+}
+
+#main .date {
+
+  display: inline-block;
+  background: var(--color-light);
+  border-radius: var(--border-radius-1);
+  margin-bottom: 1rem;
+}
+
+#main .date input[type="date"] {
+  background: transparent;
+  color: var(--color-dark);
+  padding: 2px 9px;
+  outline: none;
+  border: none;
+}
+
+#main .main-analysis {
+
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+#main .main-analysis .analysis-card {
+
+  width: 32%;
+  background: var(--color-white);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+
+#main .main-analysis .analysis-card:hover {
+  box-shadow: none;
+}
+
+#main .main-analysis .analysis-card i {
+
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+#main .main-analysis .analysis-card:nth-child(2) i {
+
+  background: var(--color-danger);
+}
+
+#main .main-analysis .analysis-card:nth-child(3) i {
+
+  background: var(--color-success);
+}
+
+#main .main-analysis span {
+
+  font-size: 12px;
+  color: var(--color-info-dark);
+}
+
+#main .main-analysis .sales {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+#main .main-analysis .sales p {
+
+  color: var(--color-dark);
+}
+
+#main .main-analysis .sales-progress {
+  width: 6rem;
+  height: 6rem;
+  border: 1rem solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#main .recent-orders table {
+
+  width: 100%;
+  text-align: center;
+  padding: var(--card-padding);
+  background: var(--color-white);
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow);
+}
+
+#main .recent-orders table:hover {
+  box-shadow: none;
+}
+
+#main .recent-orders table th {
+  padding-bottom: 0.7rem;
+}
+
+#main .recent-orders table tbody td {
+  border-bottom: 1px solid var(--color-light);
+  height: 2.5rem;
+  font-size: 12px;
+  color: var(--color-dark);
+}
+
+#main .recent-orders button {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  color: var(--color-primary);
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+#right {
+
+  width: 20%;
+}
+
+#right .right-top {
+
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+#right .right-top .hamburger {
+  display: none;
+  color: var(--color-dark);
+}
+
+#right .right-theme {
+  border: 1px solid var(--color-info-light);
+  width: 3.5rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 2rem;
+  background-color: var(--color-info-light);
+  border-radius: var(--border-radius-1);
+  transition: 0.3s;
+}
+
+#right .right-theme i {
+  width: 50%;
+  height: 100%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#right .right-theme i.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--border-radius-1);
+}
+
+#right .right-top .right-top-person {
+  width: 7.5rem;
+  color: var(--color-info-dark);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#right .right-top .right-top-person .div1 {
+  margin-right: 2.5px;
+}
+
+#right .right-top-person p {
+  font-size: 12px;
+}
+#right .right-top-person strong {
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+#right .right-top-person span {
+  font-size: 12px;
+  display: block;
+  text-align: end;
+}
+
+#right .right-top-person .div,
+.recent-update .recent-update-img {
+  width: 100%;
+  max-width: 3rem;
+  height: 3rem;
+  font-size: 12px;
+  object-fit: cover;
+  margin: 0 3px;
+}
+
+#right .right-top-person div img,
+.recent-update img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#right h2 {
+  margin-bottom: 1rem;
+}
+
+#right .recent-updates-container {
+  width: 100%;
+  background: var(--color-white);
+  border-radius: var(--border-radius-2);
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 4rem;
+}
+
+#right .recent-updates-container:hover {
+  box-shadow: none;
+}
+
+#right .recent-update {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+  line-height: 1rem;
+}
+
+#right .recent-update-info p {
+
+  font-size: 12px;
+  color: var(--color-dark);
+}
+
+#right .recent-update .recent-update-info span,
+#right .sales-analytic .online-orders .online-order-info span {
+
+  font-weight: 600;
+  font-size: 10px;
+  color: var(--color-info-light);
+}
+
+#right .recent-update .recent-update-img {
+
+  margin-right: 10px;
+}
+
+#right .sales-analytic .online-orders,
+#right .add-product {
+
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--color-white);
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 0.7rem;
+}
+
+#right .sales-analytic .online-orders:hover,
+#right .add-product:hover {
+  box-shadow: none;
+}
+
+#right .sales-analytic .online-orders .online-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+}
+
+#right .sales-analytic .offline-orders .online-img {
+  background: var(--color-danger);
+}
+
+#right .sales-analytic .new-customers .online-img {
+  background: var(--color-success);
+}
+
+#right .sales-analytic .online-orders .online-order-info h3 {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+#right .sales-analytic .online-orders .online-order-rate span {
+  color: var(--color-success);
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+#right .sales-analytic .offline-orders .online-order-rate span {
+  color: var(--color-danger);
+}
+
+#right .sales-analytic .online-orders .online-order-number p {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+#right .add-product {
+  border: 1px dashed var(--color-primary);
+  justify-content: center;
+  background-color: transparent;
+}
+
+#right .add-product .product-info {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+#right .add-product .product-info i {
+  margin-right: 1rem;
+}
+
+/* ==========MEDIA QUERY========== */
+@media (max-width: 1200px) {
+
+    /* #dasboard-container {
+        border: 11px solid red;
+        margin-bottom: 50%;
+    } */
+
+  #dasboard-container .aside {
+  
+    width: 11%;
+    height: 60vh;
+  }
+
+  #dasboard-container .aside h2 {
+    display: none;
+  }
+
+  #dasboard-container a p {
+    display: none;
+  }
+
+  #main {
+  
+    width: 50%;
+  }
+
+  #main .main-analysis {
+  
+    flex-direction: column;
+  }
+
+  #main .main-analysis .analysis-card {
+  
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+
+  #right {
+  
+    width: 35%;
+  }
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 768px) {
+  .section-p1 {
+    padding: 0;
+  }
+
+  #dasboard-container {
+  
+    flex-direction: column;
+  }
+
+  #dasboard-container .aside {
+  
+    width: 18rem;
+    height: 100vh;
+    padding: 1rem;
+    display: inline;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    z-index: 9;
+    background: #fff;
+    transition: 0.3s;
+  }
+
+  #dasboard-container .aside.active {
+    left: 0px;
+  }
+
+  #dasboard-container .aside .logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #dasboard-container .aside h2 {
+    display: inline;
+  }
+
+ #dasboard-container .close-btn {
+  
+    font-size: 1.5rem;
+    display: inline;
+  }
+
+  #dasboard-container a p {
+    display: inline;
+  }
+
+  #main {
+  
+    width: 100%;
+    margin-top: 8rem;
+    padding: 0 10px 0 10px;
+  }
+
+  #main .main-analysis {
+  
+    flex-direction: column;
+  }
+
+  #main .main-analysis .analysis-card {
+  
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+
+  #main .recent-orders {
+  
+    margin-bottom: 3rem;
+  }
+
+  #main .recent-orders tr th:first-child,
+  #main .recent-orders tr th:last-child {
+    display: none;
+  }
+
+  #main .recent-orders tr td:first-child,
+  #main .recent-orders tr td:last-child {
+    display: none;
+  }
+
+  #right {
+  
+    width: 100%;
+    padding: 0 10px 0 10px;
+    margin-bottom: 45%;
+  }
+
+  #right .recent-update {
+  
+    display: flex;
+    justify-content: start;
+  }
+
+  #right .right-top {
+  
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-white);
+    padding: 0.8rem;
+    box-shadow: var(--box-shadow);
+  }
+
+  #right .right-top .hamburger {
+    display: block;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+  }
+
+  #right .right-top .right-top-person .div1 {
+    display: none;
+  }
+
+  #right .right-top .right-top-person {
+  
+    justify-content: flex-end;
+  }
+
+  #right .sales-analytic {
+    width: 100%;
+  }
+}
